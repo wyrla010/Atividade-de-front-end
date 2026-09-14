@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 05</title>
+</head>
+<body>
+   <style>
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      padding: 20px;
+    }
+
+    
+    .grid-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto 1fr;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      grid-column: 1 / -1;
+    }
+
+    
+    .card {
+      background-color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      background-color: #4f46e5;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7);
+      }
+      70% {
+        transform: scale(1.03);
+        box-shadow: 0 0 0 12px rgba(79, 70, 229, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+      }
+    }
+
+    .btn-animated {
+      animation: pulse 2s infinite;
+    }
+
+    .btn-custom-shape {
+      background-color: #06b6d4;
+      clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+      padding: 12px 30px;
+    }
+
+    .btn-custom-shape:hover {
+      background-color: #0891b2;
+    }
+
+    
+    .custom-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .custom-form input {
+      padding: 12px;
+      border: 2px solid #a400ac;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .custom-form input::placeholder {
+      color: #ae9caf;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    .custom-form input:focus {
+      border-color: #bb46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <header class="card">
+      <h1>Painel de Controle</h1>
+    </header>
+
+    <aside class="card">
+  <h3>Formulário</h3>
+  <form class="custom-form">
+    <input type="text" placeholder="Digite seu nome..." required />
+    <input type="email" placeholder="Digite seu e-mail..." required />
+    <button type="submit" class="btn btn-animated btn-custom-shape">Enviar</button>
+  </form>
+</aside>
+
+</body>
+</html>
