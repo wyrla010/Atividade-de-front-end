@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 5: Formulário Acessível</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .accessible-group { margin-bottom: 20px; max-width: 400px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input { width: 100%; padding: 10px; font-size: 16px; border-radius: 4px; border: 2px solid #666; }
+        .hint-text { display: block; font-size: 14px; color: #555; margin-top: 5px; }
+        button { background: #222; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <form aria-label="Formulário de Configuração de Conta">
+        <h2>Acessibilidade Estrita</h2>
+        <div class="accessible-group">
+            <label Over for="password">Senha de Acesso</label>
+            <input type="password" id="password" aria-required="true" aria-describedby="password-hint" required>
+            <span id="password-hint" class="hint-text">A senha deve conter no mínimo 8 caracteres, incluindo pelo menos uma letra e um número.</span>
+        </div>
+        <button type="submit" aria-label="Enviar formulário de segurança da conta">Salvar Senha</button>
+    </form>
+</body>
+</html>
